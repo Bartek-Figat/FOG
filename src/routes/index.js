@@ -4,26 +4,27 @@ require('dotenv').config();
 const express = require('express');
 
 const passport = require('passport');
-// req.logout();
+
 const { Router } = express;
 const { UserService } = require('../services/userService');
 const { protectedRoutes } = require('../middleware/authentication');
 
 const userRouter = Router();
+const { successRedirect, failureRedirect } = process.env;
 
 userRouter.get('/auth/github', passport.authenticate('github', { scope: ['profile', 'email'] }));
 
 userRouter.get(
   '/auth/github/callback',
   passport.authenticate('github', {
-    successRedirect: 'http://localhost:3000/',
-    failureRedirect: 'http://localhost:3000/login',
+    successRedirect,
+    failureRedirect,
   })
 );
 
 userRouter.get('/user', (req, res) => {
   console.log('User router: ', req.user);
-  res.send(req.user);
+  res.send({ user: req.user });
 });
 
 userRouter.get('/logout', (req, res) => {

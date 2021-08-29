@@ -15,12 +15,10 @@ const { github } = require('./strategy/github.strtage');
 
 const Port = process.env.Port || 8080;
 
-const { secret } = process.env;
+const { secret, origin } = process.env;
 
 const server = express();
 github(server);
-
-const { origin } = process.env;
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
@@ -45,7 +43,6 @@ server.use(
     },
   })
 );
-// 31977072
 
 server.use(userRouter);
 

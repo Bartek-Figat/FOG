@@ -2,7 +2,7 @@
 require('dotenv').config();
 const GitHubStrategy = require('passport-github2').Strategy;
 const passport = require('passport');
-const { findOrCreate } = require('../services/userService');
+const { UserService } = require('../services/userService');
 
 const github = (server) => {
   server.use(passport.initialize());
@@ -26,7 +26,7 @@ const github = (server) => {
         callbackURL,
       },
       async (accessToken, refreshToken, profile, done) => {
-        const userProfiel = await findOrCreate(accessToken, profile, done);
+        const userProfiel = await UserService.findOrCreate(profile, accessToken);
         return done(null, userProfiel);
       }
     )

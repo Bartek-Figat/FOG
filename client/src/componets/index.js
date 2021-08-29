@@ -1,6 +1,5 @@
 /* eslint-disable no-unreachable */
 import React, { useEffect } from 'react';
-import { useCookies, Cookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -15,35 +14,24 @@ export const Github = () => {
 };
 
 export const Callback = () => {
+  useEffect(() => {
+    window.close();
+  });
   return (
     <>
-      <h1>Callback!!!!</h1>
+      <h1>Redirect...</h1>
     </>
   );
 };
 
 export const Login = () => {
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-  // const cookie = new Cookies();
-  // console.log(cookie.get('connect.sid'));
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const { data } = await axios.get('http://localhost:8080/user', { withCredentials: true });
-  //       return data;
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
-
+  const history = useHistory();
   const githubWindow = () => {
     const url = `http://localhost:8080/auth/github/callback`;
     window.open(url, '_blank', 'width=500,height=600');
   };
+
+  history.push('/');
 
   return (
     <>
