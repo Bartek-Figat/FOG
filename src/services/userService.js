@@ -60,14 +60,14 @@ class UserService {
     return document;
   }
 
-  static async findOrCreate(profile, accessToken) {
-    const token = sign({ accessToken }, `${secret}`);
-    const githubUser = await this.userRepository.findOne({ 'profile.id': profile.id });
-    if (githubUser) return { githubUser, token };
+  static async findOrCreate(profile) {
+    const githubUser = await this.userRepository.findOne({ id: profile.id });
 
-    const githubUseWasCreated = this.userRepository.insertOne(profile);
+    if (githubUser) return githubUser;
 
-    return { githubUseWasCreated, token };
+    const githubUseWasCreated = await this.userRepository.insertOne(profile);
+
+    return githubUseWasCreated;
   }
 }
 

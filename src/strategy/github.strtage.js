@@ -4,16 +4,13 @@ const GitHubStrategy = require('passport-github2').Strategy;
 const passport = require('passport');
 const { UserService } = require('../services/userService');
 
-const github = (server) => {
-  server.use(passport.initialize());
-  server.use(passport.session());
-
-  passport.serializeUser(function (user, cb) {
-    cb(null, user);
+const github = () => {
+  passport.serializeUser(function (user, done) {
+    done(null, user);
   });
 
-  passport.deserializeUser(function (obj, cb) {
-    cb(null, obj);
+  passport.deserializeUser(function (obj, done) {
+    done(null, obj);
   });
 
   const { clientID, clientSecret, callbackURL } = process.env;

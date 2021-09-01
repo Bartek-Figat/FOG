@@ -3,22 +3,18 @@
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
-
-const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
 const compression = require('compression');
 // require('../config/redis.config');
 const { userRouter } = require('./routes/index');
-const { github } = require('./strategy/github.strtage');
 
 const Port = process.env.Port || 8080;
 
 const { secret, origin } = process.env;
 
 const server = express();
-github(server);
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
@@ -36,11 +32,6 @@ server.use(
     secret,
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      httpOnly: true,
-      secure: false,
-      maxAge: 24 * 60 * 60 * 100,
-    },
   })
 );
 

@@ -27,11 +27,9 @@ export const Callback = () => {
 export const Login = () => {
   const history = useHistory();
   const githubWindow = () => {
-    const url = `http://localhost:8080/auth/github/callback`;
+    const url = `http://localhost:8080/login/github`;
     window.open(url, '_blank', 'width=500,height=600');
   };
-
-  history.push('/');
 
   return (
     <>

@@ -1,30 +1,57 @@
+/* eslint-disable prefer-template */
+/* eslint-disable camelcase */
+/* eslint-disable no-return-await */
 /* eslint-disable no-unused-vars */
 /* eslint-disable func-names */
 require('dotenv').config();
 const express = require('express');
+const fetch = require('node-fetch');
 
-const passport = require('passport');
+const axios = require('axios').default;
 
 const { Router } = express;
+
 const { UserService } = require('../services/userService');
 const { protectedRoutes } = require('../middleware/authentication');
 
 const userRouter = Router();
-const { successRedirect, failureRedirect } = process.env;
+const { clientID, clientSecret } = process.env;
 
-userRouter.get('/auth/github', passport.authenticate('github', { scope: ['profile', 'email'] }));
+userRouter.get('/login/github', (req, res) => {
+  res.redirect(`https://github.com/login/oauth/authorize?client_id=${clientID}&scope=user:email`);
+});
 
-userRouter.get(
-  '/auth/github/callback',
-  passport.authenticate('github', {
-    successRedirect,
-    failureRedirect,
-  })
-);
+userRouter.get('/auth/github/callback', async (req, res, next) => {
+  try {
+    const { code } = req.query;
+    const response = await axios.post(
+      `https://github.com/login/oauth/access_token?client_id=${clientID}&client_secret=${clientSecret}&code=${code}`
+    );
+
+    // const separate = new RegExp('&');
+    // const tokenParams = response.data.split(separate)[0].split('access_token=')[1];
+
+    const urlSearchParams = new URLSearchParams(response.data);
+    const params = Object.fromEntries(urlSearchParams.entries());
+
+    const user = await axios.get('https://api.github.com/user', {
+      headers: {
+        Authorization: `token ${params.access_token}`,
+      },
+    });
+
+    req.session = user.data.id;
+    res.redirect('http://localhost:3000/auth/github/success');
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 userRouter.get('/user', (req, res) => {
-  console.log('User router: ', req.user);
-  res.send({ user: req.user });
+  console.log('=======================================');
+  console.log('User router!!!!: ', req);
+  console.log('=======================================');
+  res.json({ user: req.session.id });
 });
 
 userRouter.get('/logout', (req, res) => {

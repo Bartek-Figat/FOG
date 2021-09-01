@@ -18,7 +18,7 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/success">
+          <Route path="/auth/github/success">
             <Callback />
           </Route>
         </Switch>
