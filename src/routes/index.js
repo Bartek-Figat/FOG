@@ -5,57 +5,24 @@
 /* eslint-disable func-names */
 require('dotenv').config();
 const express = require('express');
-const fetch = require('node-fetch');
-
-const axios = require('axios').default;
 
 const { Router } = express;
-
 const { UserService } = require('../services/userService');
-const { protectedRoutes } = require('../middleware/authentication');
+const { protectedRoutes, checkIfSessionUser } = require('../middleware/authentication');
+const { redirectToGitHubPanelLLogin } = require('../controllers/githubPanelLogin.controller');
+const { githubCallback } = require('../controllers/githubCallback.controller');
+const { shwoUserDetails } = require('../controllers/userDetails.controller');
+const { tokenIsValidated } = require('../controllers/confirmToken.controller');
 
 const userRouter = Router();
-const { clientID, clientSecret } = process.env;
 
-userRouter.get('/login/github', (req, res) => {
-  res.redirect(`https://github.com/login/oauth/authorize?client_id=${clientID}&scope=user:email`);
-});
+userRouter.get('/login/github', redirectToGitHubPanelLLogin);
+userRouter.get('/auth/github/callback', githubCallback);
+userRouter.get('/login/success/activated/:token', tokenIsValidated);
+userRouter.get('/user/detail', checkIfSessionUser, shwoUserDetails);
 
-userRouter.get('/auth/github/callback', async (req, res, next) => {
-  try {
-    const { code } = req.query;
-    const response = await axios.post(
-      `https://github.com/login/oauth/access_token?client_id=${clientID}&client_secret=${clientSecret}&code=${code}`
-    );
-
-    // const separate = new RegExp('&');
-    // const tokenParams = response.data.split(separate)[0].split('access_token=')[1];
-
-    const urlSearchParams = new URLSearchParams(response.data);
-    const params = Object.fromEntries(urlSearchParams.entries());
-
-    const user = await axios.get('https://api.github.com/user', {
-      headers: {
-        Authorization: `token ${params.access_token}`,
-      },
-    });
-
-    req.session = user.data.id;
-    res.redirect('http://localhost:3000/auth/github/success');
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-userRouter.get('/user', (req, res) => {
-  console.log('=======================================');
-  console.log('User router!!!!: ', req);
-  console.log('=======================================');
-  res.json({ user: req.session.id });
-});
-
-userRouter.get('/logout', (req, res) => {
-  req.logout();
+userRouter.delete('/logout', (req, res) => {
+  req.logOut();
 });
 
 userRouter.get('/detail', protectedRoutes, async (req, res) => {

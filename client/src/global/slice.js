@@ -1,19 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { githubIsLogin: false, user: null };
+const initialState = { githubIsLogin: false };
 
 export const checkIsLogin = createSlice({
-  name: 'counter',
+  name: 'githubState',
   initialState,
   reducers: {
-    githubCheckIftLogin: (state) => {
-      return state.githubIsLogin;
+    githubCheckIfLogin: (state, action) => {
+      state.githubIsLogin = false;
     },
-    githuUser: (state, actions) => {
-      state.user = actions.payload;
+    github: (state, action) => {
+      state.githubIsLogin = true;
+    },
+
+    githubUser: (state, actions) => {
+      state.githubIsLogin = actions.payload;
     },
   },
 });
 
-export const { githubCheckIftLogin, githuUser } = checkIsLogin.actions;
+export const { githubCheckIfLogin, githubUser, github } = checkIsLogin.actions;
 export default checkIsLogin.reducer;

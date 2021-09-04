@@ -1,28 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Github, Login, Callback } from './componets/index';
+import { Navigation } from './routers/index';
+import { Github, Login, Callback, Detail } from './componets/index';
+import { useSelector, useDispatch } from 'react-redux';
 const queryClient = new QueryClient();
 function App() {
   return (
     <Router>
-      <QueryClientProvider client={queryClient}>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/login">login</Link>
-            </li>
-          </ul>
-        </nav>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/auth/github/success">
-            <Callback />
-          </Route>
-        </Switch>
-      </QueryClientProvider>
+      <Switch>
+        <Route exact path={Navigation.LOGIN} component={Login} />
+        <Route exact path={Navigation.AUTHENTICATION} component={Callback} />
+        <Route exact path={Navigation.ADMIN} component={Github} />
+      </Switch>
     </Router>
   );
 }

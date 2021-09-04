@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 require('dotenv').config();
 const { compare, genSalt, hash } = require('bcrypt');
 const { ObjectId } = require('mongodb');
 const { sign } = require('jsonwebtoken');
 const { UserRepository } = require('../repositories/userRepository');
 const { UserModel } = require('../models/user.model');
+const { GithubModel } = require('../models/github.model');
 
 const { secret } = process.env;
 
@@ -44,7 +46,7 @@ class UserService {
   }
 
   static async showUser(id, options) {
-    const document = await this.userRepository.findOne({ _id: ObjectId(id) }, options);
+    const document = await this.userRepository.findOne({ id }, options);
     if (!document) throw new Error('something went wrong');
     return document;
   }
@@ -60,14 +62,46 @@ class UserService {
     return document;
   }
 
-  static async findOrCreate(profile) {
+  static async findOrCreate(profile, token) {
     const githubUser = await this.userRepository.findOne({ id: profile.id });
+    if (githubUser) return githubUser.id;
 
-    if (githubUser) return githubUser;
+    const githubModel = new GithubModel(
+      profile.login,
+      profile.id,
+      profile.node_id,
+      profile.avatar_url,
+      profile.gravatar_id,
+      profile.url,
+      profile.html_url,
+      profile.followers_url,
+      profile.following_url,
+      profile.gists_url,
+      profile.starred_url,
+      profile.subscriptions_url,
+      profile.organizations_url,
+      profile.repos_url,
+      profile.events_url,
+      profile.received_events_url,
+      profile.type,
+      profile.site_admin,
+      profile.name,
+      profile.company,
+      profile.blog,
+      profile.location,
+      profile.email,
+      profile.hireable,
+      token
+    );
+    const githubUseWasCreated = await this.userRepository.insertOne(githubModel);
+    const userInsertedID = await this.userRepository.find({ _id: githubUseWasCreated.insertedId });
 
-    const githubUseWasCreated = await this.userRepository.insertOne(profile);
+    return userInsertedID[0].id;
+  }
 
-    return githubUseWasCreated;
+  static async tokenVerification(query) {
+    const token = await this.userRepository.findOne(query);
+    return token;
   }
 }
 
