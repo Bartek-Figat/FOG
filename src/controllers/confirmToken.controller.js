@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable no-return-assign */
 /* eslint-disable consistent-return */
 require('dotenv').config();
@@ -11,18 +12,22 @@ const tokenIsValidated = async (req, res) => {
   try {
     const { token } = req.params;
 
-    const userToken = await UserService.tokenVerification({ token });
+    const userToken = await UserService.tokenVerification(token);
 
-    if (!userToken) return res.status(401);
-
-    const decode = verify(userToken.token, `${secret}`);
-
-    if (!decode) return res.status(401);
-    console.log(decode);
-    req.user = decode;
-    return res.status(200).end();
+    if (userToken === undefined) return res.status(401).end();
+    verify(userToken.token, `${secret}`, (err, decoded) => {
+      if (err) {
+        res.status(401).end();
+      } else {
+        req.session.user = decoded.data;
+        req.session.save(() => {
+          return res.json({ success: 200 });
+        });
+      }
+    });
   } catch (err) {
     console.log(err);
+    res.status(500);
   }
 };
 

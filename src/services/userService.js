@@ -47,7 +47,6 @@ class UserService {
 
   static async showUser(id, options) {
     const document = await this.userRepository.findOne({ id }, options);
-    if (!document) throw new Error('something went wrong');
     return document;
   }
 
@@ -58,49 +57,50 @@ class UserService {
 
   static async deleteUser(query) {
     const document = await this.userRepository.deleteOne({ _id: ObjectId(query) });
-    if (!document) throw new Error('something went wrong');
     return document;
   }
 
   static async findOrCreate(profile, token) {
-    const githubUser = await this.userRepository.findOne({ id: profile.id });
+    const githubUser = await this.userRepository.findOne({ id: profile.data.id });
+
     if (githubUser) return githubUser.id;
 
     const githubModel = new GithubModel(
-      profile.login,
-      profile.id,
-      profile.node_id,
-      profile.avatar_url,
-      profile.gravatar_id,
-      profile.url,
-      profile.html_url,
-      profile.followers_url,
-      profile.following_url,
-      profile.gists_url,
-      profile.starred_url,
-      profile.subscriptions_url,
-      profile.organizations_url,
-      profile.repos_url,
-      profile.events_url,
-      profile.received_events_url,
-      profile.type,
-      profile.site_admin,
-      profile.name,
-      profile.company,
-      profile.blog,
-      profile.location,
-      profile.email,
-      profile.hireable,
+      profile.data.login,
+      profile.data.id,
+      profile.data.node_id,
+      profile.data.avatar_url,
+      profile.data.gravatar_id,
+      profile.data.url,
+      profile.data.html_url,
+      profile.data.followers_url,
+      profile.data.following_url,
+      profile.data.gists_url,
+      profile.data.starred_url,
+      profile.data.subscriptions_url,
+      profile.data.organizations_url,
+      profile.data.repos_url,
+      profile.data.events_url,
+      profile.data.received_events_url,
+      profile.data.type,
+      profile.data.site_admin,
+      profile.data.name,
+      profile.data.company,
+      profile.data.blog,
+      profile.data.location,
+      profile.data.email,
+      profile.data.hireable,
       token
     );
     const githubUseWasCreated = await this.userRepository.insertOne(githubModel);
-    const userInsertedID = await this.userRepository.find({ _id: githubUseWasCreated.insertedId });
 
+    const userInsertedID = await this.userRepository.find({ _id: githubUseWasCreated.insertedId });
     return userInsertedID[0].id;
   }
 
   static async tokenVerification(query) {
-    const token = await this.userRepository.findOne(query);
+    const token = await this.userRepository.findOne({ token: query });
+
     return token;
   }
 }

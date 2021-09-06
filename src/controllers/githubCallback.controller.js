@@ -30,9 +30,8 @@ const githubCallback = async (req, res, next) => {
         `${secret}`
       );
 
-      const data = await UserService.findOrCreate(user.data, authToken);
-      req.session.userID = data;
-      res.redirect(`http://localhost:3000/success/activated/${authToken}`);
+      await UserService.findOrCreate(user, authToken);
+      res.status(200).redirect(`http://localhost:3000/success/activated/${authToken}`);
     }
   } catch (err) {
     console.log(err);

@@ -18,11 +18,11 @@ const userRouter = Router();
 
 userRouter.get('/login/github', redirectToGitHubPanelLLogin);
 userRouter.get('/auth/github/callback', githubCallback);
-userRouter.get('/login/success/activated/:token', tokenIsValidated);
+userRouter.get('/api/success/activated/:token', tokenIsValidated);
 userRouter.get('/user/detail', checkIfSessionUser, shwoUserDetails);
 
 userRouter.delete('/logout', (req, res) => {
-  req.logOut();
+  req.session.destroy();
 });
 
 userRouter.get('/detail', protectedRoutes, async (req, res) => {
