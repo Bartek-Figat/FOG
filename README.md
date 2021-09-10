@@ -2,6 +2,8 @@
 
 ![Screenshot 2021-09-09 at 10 08 54 PM](https://user-images.githubusercontent.com/67811830/132787992-e424dbe2-36da-4945-82fe-976a478a7c67.png)
 
+### Wszelkie prawa zastrzeżone, wszystkie prawa zastrzeżone – klauzula oznaczająca, że prawa autorskie należą do podmiotu o tym informującego. Zabrania ona zmieniać, kopiować i w jakikolwiek sposób wykorzystywać utwór bez zgody autora.
+
 ## 📋 Table of contents
 
 - [Overview](#👇-overview)
