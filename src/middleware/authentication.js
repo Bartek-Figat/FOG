@@ -17,7 +17,6 @@ const protectedRoutes = (req, res, next) => {
 };
 
 const checkIfSessionUser = (req, res, next) => {
-  console.log('line ->20', req.session);
   if (!req.session.user || !req.session) {
     const err = res.json({ err: 'something went wrong', statusCode: 401 });
     err.statusCode = 401;

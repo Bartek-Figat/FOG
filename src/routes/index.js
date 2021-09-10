@@ -8,22 +8,17 @@ const express = require('express');
 
 const { Router } = express;
 const { UserService } = require('../services/userService');
+const { Controller } = require('../controllers/controller');
 const { protectedRoutes, checkIfSessionUser } = require('../middleware/authentication');
-const { redirectToGitHubPanelLLogin } = require('../controllers/githubPanelLogin.controller');
-const { githubCallback } = require('../controllers/githubCallback.controller');
-const { shwoUserDetails } = require('../controllers/userDetails.controller');
-const { tokenIsValidated } = require('../controllers/confirmToken.controller');
 
 const userRouter = Router();
 
-userRouter.get('/login/github', redirectToGitHubPanelLLogin);
-userRouter.get('/auth/github/callback', githubCallback);
-userRouter.get('/api/success/activated/:token', tokenIsValidated);
-userRouter.get('/user/detail', checkIfSessionUser, shwoUserDetails);
+userRouter.get('/login/github', Controller.redirectToGitHubPanelLLogin);
+userRouter.get('/auth/github/callback', Controller.githubCallback);
+userRouter.get('/api/success/activated/:token', Controller.tokenIsValidated);
+userRouter.get('/user/detail', checkIfSessionUser, Controller.shwoUserDetails);
 
-userRouter.delete('/logout', (req, res) => {
-  req.session.destroy();
-});
+userRouter.delete('/logout', Controller.logout);
 
 userRouter.get('/detail', protectedRoutes, async (req, res) => {
   const options = { projection: { _id: 0, password: 0 } };

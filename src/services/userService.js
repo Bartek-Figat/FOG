@@ -62,6 +62,7 @@ class UserService {
 
   static async findOrCreate(profile, token) {
     const githubUser = await this.userRepository.findOne({ id: profile.data.id });
+    console.log('githubUser', githubUser);
 
     if (githubUser) return githubUser.id;
 
@@ -94,6 +95,8 @@ class UserService {
     );
     const githubUseWasCreated = await this.userRepository.insertOne(githubModel);
 
+    console.log('githubUseWasCreated', githubUseWasCreated);
+
     const userInsertedID = await this.userRepository.find({ _id: githubUseWasCreated.insertedId });
     return userInsertedID[0].id;
   }
@@ -101,6 +104,14 @@ class UserService {
   static async tokenVerification(query) {
     const token = await this.userRepository.findOne({ token: query });
 
+    return token;
+  }
+
+  static async deletSessionToken(query) {
+    const findToken = await this.userRepository.findOne({ token: query });
+    console.log('findToken -> 109', findToken);
+    const token = await this.userRepository.deleteOne({ token: findToken });
+    console.log('token -> 111', token);
     return token;
   }
 }
