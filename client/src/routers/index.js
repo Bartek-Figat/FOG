@@ -8,10 +8,7 @@ export const Navigation = {
 };
 
 export const linkNavigation = [
+  { name: 'Home', target: '/' },
   { name: 'Login', target: '/login' },
   { name: 'Register', target: '/register' },
-  { name: 'Home', target: '/' },
-  { name: 'Authetication', target: '/success/activated/:token' },
-  { name: 'Admin', target: '/admin' },
-  { name: 'Category', target: '/category' },
 ];

@@ -8,7 +8,7 @@ import { linkNavigation } from '../routers/index';
 
 async function Logout() {
   const history = useHistory();
-  await instance.delete(`logout`);
+  await instance.delete(`logout`, { withCredentials: true });
   history.push('/');
 }
 
@@ -116,16 +116,12 @@ export const Main = () => {
   const history = useHistory();
   return (
     <>
-      <header className="mb-8">
-        <div className=" flex flex-col items-center xl:flex-row xl:items-stretch">
-          <nav className=" mt-2 flex-1 flex xl:mt-0 justify-center xl:justify-end p-3 group">
+      <header className="flex flex-col w-full fixed delay-75 ease-out bg-green-600 p-1">
+        <div className="w-full p-2 bg-red-400">
+          <nav className="flex justify-center  p-1 bg-yellow-200">
             {Object.values(linkNavigation).map((link) => {
               return (
-                <Link
-                  className="p-1 flex flex-shrink-0 text-sm lg:text-lg lg:px-6 xl:px-8 xl:text-xl"
-                  key={link.name}
-                  to={link.target}
-                >
+                <Link className="p-3  bg-green-200" key={link.name} to={link.target}>
                   {link.name}
                 </Link>
               );
