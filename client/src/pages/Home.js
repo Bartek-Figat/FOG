@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../partials/Headre';
+import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import HeroHome from '../partials/HeroHome';
 import Footer from '../partials/Footer';
