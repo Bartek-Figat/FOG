@@ -32,8 +32,8 @@ function App() {
     <Router>
       <Switch>
         <Route exact path={Navigation.HOME} component={Home} />
-        <Route exact path={Navigation.REGISTER} component={Signin} />
-        <Route exact path={Navigation.LOGIN} component={SignUp} />
+        <Route exact path={Navigation.REGISTER} component={SignUp} />
+        <Route exact path={Navigation.LOGIN} component={Signin} />
         <Route exact path={Navigation.AUTHENTICATION} component={Callback} />
         <Route exact path={Navigation.ADMIN} component={Github} />
       </Switch>

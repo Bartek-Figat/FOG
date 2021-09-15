@@ -92,11 +92,14 @@ module.exports = {
         '10': '2.5rem',
       },
       minWidth: {
-        10: '2.5rem',
+        '10': '2.5rem',
         '48': '12rem',
       },
+      opacity: {
+        '90': '0.9',
+      },
       scale: {
-        98: '.98',
+        '98': '.98',
       },
       keyframes: {
         float: {
@@ -104,12 +107,12 @@ module.exports = {
           '50%': { transform: 'translateY(-5%)', },
         },
       },
-      customForms: (theme) => ({
+      customForms: theme => ({
         default: {
           'input, textarea, multiselect, select, checkbox, radio': {
-            backgroundColor: 'transparent',
-            borderColor: theme('colors.gray.700'),
-            borderRadius: theme('borderRadius.sm'),
+            backgroundColor: theme('colors.white'),
+            borderColor: theme('colors.gray.300'),
+            borderRadius: theme('borderRadius.default'),
             '&:focus': {
               outline: undefined,
               boxShadow: undefined,
@@ -117,13 +120,14 @@ module.exports = {
             },
           },
           'input, textarea, multiselect, select': {
-            backgroundColor: 'transparent',
+            backgroundColor: theme('colors.white'),
             fontSize: undefined,
             lineHeight: undefined,
             paddingTop: theme('spacing.3'),
             paddingRight: theme('spacing.4'),
             paddingBottom: theme('spacing.3'),
             paddingLeft: theme('spacing.4'),
+            borderColor: theme('colors.gray.900'),
           },
           'input, textarea': {
             '&::placeholder': {
@@ -132,11 +136,12 @@ module.exports = {
           },
           select: {
             paddingRight: theme('spacing.10'),
-            iconColor: theme('colors.gray.500'),
+            iconColor: theme('colors.gray.400'),
           },
           'checkbox, radio': {
-            color: theme('colors.purple.600'),
-            backgroundColor: 'transparent',
+            color: theme('colors.gray.800'),
+            backgroundColor: theme('colors.white'),
+            borderRadius: theme('borderRadius.sm'),
           },
         },
       }),
@@ -149,5 +154,7 @@ module.exports = {
     boxShadow: ['responsive', 'hover', 'focus', 'focus-within'],
     opacity: ['responsive', 'hover', 'focus', 'group-hover'],
   },
-  plugins: [require('@tailwindcss/custom-forms')],
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+  ],
 };
