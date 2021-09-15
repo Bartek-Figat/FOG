@@ -110,7 +110,7 @@ function Header() {
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
                 <Link
-                  to="/signin"
+                  to="/login"
                   className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                 >
                   Sign in
@@ -118,7 +118,7 @@ function Header() {
               </li>
               <li>
                 <Link
-                  to="/signup"
+                  to="/register"
                   className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3"
                 >
                   Sign up
@@ -212,7 +212,7 @@ function Header() {
                 </li>
                 <li>
                   <Link
-                    to="/signin"
+                    to="/login"
                     className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center"
                   >
                     Sign in
@@ -220,7 +220,7 @@ function Header() {
                 </li>
                 <li>
                   <Link
-                    to="/signup"
+                    to="/register"
                     className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out"
                   >
                     Sign up

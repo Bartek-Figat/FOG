@@ -3,6 +3,12 @@ import React from 'react';
 import Header from '../partials/Headre';
 import PageIllustration from '../partials/PageIllustration';
 import HeroHome from '../partials/HeroHome';
+import Process  from '../partials/Process';
+import FeaturesHome from '../partials/FeaturesHome';
+import Tabs from '../partials/Tabs';
+import Target from '../partials/Target';
+import News from '../partials/News';
+import Newsletter from '../partials/Newsletter';
 import Footer from '../partials/Footer';
 
 function Home() {
@@ -15,8 +21,14 @@ function Home() {
           <PageIllustration />
         </div>
         <HeroHome />
+        <Process />
+        <FeaturesHome />
+        <Tabs />
+        <Target />
+        <News />
+        <Newsletter />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

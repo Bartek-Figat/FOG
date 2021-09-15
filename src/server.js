@@ -39,10 +39,8 @@ server.use(
     saveUninitialized: true,
     cookie: {
       secure: false,
-      // httpOnly: true,
-      // domain: 'example.com',
-      // path: 'foo/bar',
-      expires: null,
+      httpOnly: true,
+      expires: expiryDate,
     },
   })
 );

@@ -25,6 +25,29 @@ module.exports = {
           800: '#38379C',
           900: '#262668',
         },
+        blue: {
+          100: '#E6F0FD',
+          200: '#CCE2FC',
+          300: '#99C5FA',
+          400: '#66A9F7',
+          500: '#338CF5',
+          600: '#0070F4',
+          700: '#0064DA',
+          800: '#0059C2',
+          900: '#004391',
+        },
+      },
+      boxShadow: {
+        xs: '0 0 0 1px rgba(0, 0, 0, 0.16)',
+        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.16)',
+        default: '0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+        inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.04)',
+        outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+        none: 'none',
       },
       spacing: {
         '9/16': '56.25%',
@@ -48,21 +71,38 @@ module.exports = {
         '6xl': '4rem',
       },
       inset: {
+        '1/2': '50%',
         full: '100%',
       },
       letterSpacing: {
+        none: '1',
         tighter: '-0.02em',
         tight: '-0.01em',
         normal: '0',
         wide: '0.01em',
         wider: '0.02em',
         widest: '0.4em',
+        '3': '.75rem',
+        '4': '1rem',
+        '5': '1.2rem',
+        '6': '1.5rem',
+        '7': '1.75rem',
+        '8': '2rem',
+        '9': '2.25rem',
+        '10': '2.5rem',
       },
       minWidth: {
         10: '2.5rem',
+        '48': '12rem',
       },
       scale: {
         98: '.98',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)', },
+          '50%': { transform: 'translateY(-5%)', },
+        },
       },
       customForms: (theme) => ({
         default: {
