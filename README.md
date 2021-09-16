@@ -60,6 +60,38 @@ In the project directory client, you can run:
   secret
 ```
 
+## GIT new branch
+
+```
+  Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:
+
+  git checkout -b FE#1 
+```
+## GIT committing changes
+
+```
+   When committing changes to your branch, use the  key at the beginning of your commit message to link those commits to the development panel in your TRELLO. For example:
+
+   git commit -m  "feat(FE#1): some message"
+```
+
+## GIT  branching and merging
+
+```
+   git checkout master 
+   git merge FE#4
+```
+
+## GIT commits types
+
+```
+  git commit -m  "feat(FE#1): some message"
+
+  git commit -m  "fix(FE#1): some message"
+
+  git commit -m  "refactor(FE#1): some message"
+```
+
 
 ### 👥 Team
 #### Founder -->  Bartlomiej Figatowski
