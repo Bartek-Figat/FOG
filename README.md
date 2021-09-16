@@ -1,87 +1,61 @@
-# FOG ->
-
 ![Screenshot 2021-09-09 at 10 08 54 PM](https://user-images.githubusercontent.com/67811830/132787992-e424dbe2-36da-4945-82fe-976a478a7c67.png)
 
 ### All rights reserved - a clause indicating that the copyrights belong to the entity informing about it. It is forbidden to change, copy or use the work in any way without the consent of the author.
 
-## 📋 Table of contents
 
-- [Overview](#👇-overview)
-  - [The functionality](#⚙️-the-functionality)
-  - [Screenshot](#🎇-screenshot)
-  - [Links](#🔗-links-)
-- [Workin process](#👨‍💻-working-process)
-  - [Creating with](#🛠-creating-with)
-  - [Inside the project](#💾-inside-the-project)
-  - [Useful resources](#🌐-useful-resources)
-- [Authors](#🧔🏻‍♂️-author)
-- [Acknowledgments](#🙏-acknowledgments)
+# FO</>OG
 
----
+Node version: v14.17.6
 
-## 👇 Overview
 
-### ⚙️ The functionality
 
-Users should be able to:
+## Download
 
-- Cteating user-storyes...
+##```git clone https://github.com/Bartek-Figat/FOG.git```
 
-### 🎇 Screenshot
 
-[]()
+## Installation/Requirements
 
-### 🔗 Links
 
-- Live Site URL: [Live]()
+### Built With
 
-### 👨‍💻 Working process
+- [x] node.js
+- [x] express.js
+- [x] react.js
+- [x] mongodb
+- [x] tailwindcss.
 
-- Describing the whole process...
+### Run Server
 
-### 🛠 Creating with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Responsive Website
-
-### 💾 Inside the project
-
-<details>
-  <summary markdown="span">Look inside 👀</summary>
-
-```html
+In the project directory, you can run:
 
 ```
-
-Short describing the code block...
-
-```css
-
+ npm install
 ```
 
-Short describing the code block...
-
-```js
-
+```
+ npm run server
 ```
 
-</details>  
-<br>
+### Run Client
 
-### 🌐 Useful resources
+In the project directory client, you can run:
 
-Add some useful resources...
+```
+ npm install
+```
 
-### 🧔🏻‍♂️ Author
+```
+ npm start
+```
 
-Add info about you
+### .env
 
-### 👥 Team
-
-Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)
-
-### 🙏 Acknowledgments
-
-Say "thank you" to person that helped to you...
+```
+  dbURI=mongodb://127.0.0.1:27017
+  clientID=
+  clientSecret=
+  callbackURL=http://localhost:8080/auth/github/callback
+  origin=http://localhost:3000/
+  secret
+```
