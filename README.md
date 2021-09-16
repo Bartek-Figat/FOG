@@ -11,7 +11,7 @@ Node version: v14.17.6
 
 ## Download
 
-##```git clone https://github.com/Bartek-Figat/FOG.git```
+```git clone https://github.com/Bartek-Figat/FOG.git```
 
 
 ## Installation/Requirements
@@ -59,3 +59,12 @@ In the project directory client, you can run:
   origin=http://localhost:3000/
   secret
 ```
+
+
+### 👥 Team
+Founder -->  Bartlomiej Figatowski
+Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)
+
+### 🙏 Acknowledgments
+
+Say "thank you" to person that helped to you...
