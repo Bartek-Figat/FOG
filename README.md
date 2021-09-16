@@ -62,8 +62,8 @@ In the project directory client, you can run:
 
 
 ### 👥 Team
-`Founder -->  Bartlomiej Figatowski`
-`Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
+#### Founder -->  Bartlomiej Figatowski
+#### Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
 
 ### 🙏 Acknowledgments
 
