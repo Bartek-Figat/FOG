@@ -16,87 +16,63 @@ Node version: v14.17.6
 
 ## Installation/Requirements
 
+### Tech Stack
 
-### Built With
+**Client:** React, Redux, TailwindCSS
 
-- [x] node.js
-- [x] express.js
-- [x] react.js
-- [x] mongodb
-- [x] tailwindcss.
+**Server:** Node, Express
 
-### Run Server
+**DB:** Mongodb driver
 
-In the project directory, you can run:
 
-```
- npm install
-```
 
-```
- npm run server
+Install with npm. In the project directory, you can run:
+
+```bash
+  npm install 
+  npm run server
 ```
 
-### Run Client
+Install with npm. In the project directory client, you can run:
 
-In the project directory client, you can run:
-
-```
- npm install
-```
-
-```
- npm start
+```bash
+  npm install 
+  npm start
 ```
 
-### .env
+## Environment Variables
 
-```
-  dbURI=mongodb://127.0.0.1:27017
-  clientID=
-  clientSecret=
-  callbackURL=http://localhost:8080/auth/github/callback
-  origin=http://localhost:3000/
-  secret
-```
+To run this project, you will need to add the following environment variables to your .env file
 
-## GIT new branch
+`dbURI=mongodb://127.0.0.1:27017`
+`clientID=`
+`callbackURL=http://localhost:8080/auth/github/callback`
+`origin=http://localhost:3000/`
+` secret=`
 
-```
-  Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:
 
-  git checkout -b FE#1 
-```
-## GIT committing changes
+## GIT
 
-```
-   When committing changes to your branch, use the  key at the beginning of your commit message to link those commits to the development panel in your TRELLO. For example:
+- Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:
+`git checkout -b FE#1`
+- When committing changes to your branch, use the  key at the beginning of your commit message to link those commits to the development panel in your TRELLO. For example:
+`git commit -m  "feat(FE#1): some message"`
+- Branching and merging For example:
+`git checkout master`
+`git merge FE#1`
+- Commits types For example:
+`git commit -m  "feat(FE#1): some message"`
+`git commit -m  "fix(FE#1): some message"`
+`git commit -m  "refactor(FE#1): some message"`
 
-   git commit -m  "feat(FE#1): some message"
-```
-
-## GIT  branching and merging
-
-```
-   git checkout master 
-   git merge FE#1
-```
-
-## GIT commits types
-
-```
-  git commit -m  "feat(FE#1): some message"
-
-  git commit -m  "fix(FE#1): some message"
-
-  git commit -m  "refactor(FE#1): some message"
-```
 
 
 ### 👥 Team
 #### Founder -->  Bartlomiej Figatowski
 #### Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
+#### Bartek Sopecki
 
-### 🙏 Acknowledgments
+## Support
 
-Say "thank you" to person that helped to you...
+For support. You can become a contributor.
+
