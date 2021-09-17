@@ -6,9 +6,14 @@
 
 
 
+## Table of Contents
 
-
-
+- [Download](#Download)
+- [Installation/Requirements](#Installation/Requirements)
+- [Environment Variables](#Environment/Variables)
+- [GIT](#GIT)
+- [Team](#Team)
+- [Support](#Support)
 
 
 ## Download
@@ -22,7 +27,7 @@
 
 ### Tech Stack
 
-- **Client:** React, Redux, TailwindCSS
+- **Client:** React, Redux Toolkit, TailwindCSS
 
 - **Server:** Node, Express
 
@@ -45,7 +50,7 @@
   npm start
 ```
 
-## Environment Variables
+## Environment/Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
