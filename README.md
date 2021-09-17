@@ -73,31 +73,33 @@ To run this project, you will need to add the following environment variables to
 
 ## GIT
 
-- Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:`git checkout -b FE#1`
+- Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:
+```bash
+   git checkout -b FE#1
+```
 
 - When committing changes to your branch, use the  key at the beginning of your commit message to link those commits to the development panel in your TRELLO. For example:
-
-`git commit -m  "feat(FE#1): some message"`
-<br>
+```bash
+   git commit -m  "feat(FE#1): some message"
+```
 
 - Branching and merging For example:
-
-`git checkout master`
-<br>
-
-`git merge FE#1`
-
-
+```bash
+  git checkout master
+```
+```bash
+  git merge FE#1
+```
 - Commits types For example:
-
-`git commit -m  "feat(FE#1): some message"`
-<br>
-
-`git commit -m  "fix(FE#1): some message"`
-<br>
-
-`git commit -m  "refactor(FE#1): some message"`
-
+```bash
+  git commit -m  "feat(FE#1): some message"
+```
+```bash
+  git commit -m  "fix(FE#1): some message"
+```
+```bash
+  git commit -m  "refactor(FE#1): some message"
+```
 ## 
 
 
