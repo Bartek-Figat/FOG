@@ -11,7 +11,9 @@ Node version: v14.17.6
 
 ## Download
 
-```git clone https://github.com/Bartek-Figat/FOG.git```
+```bash
+   git clone https://github.com/Bartek-Figat/FOG.git
+```
 
 
 ## Installation/Requirements
