@@ -2,13 +2,23 @@
   "projectName": "FOG",
   "projectOwner": "Bartek-Figat",
   "repoType": "github",
-  "repoHost": "https://github.com/",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "gitmoji",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "bsopecki",
+      "name": "Bartłomiej Sopecki",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44322413?v=4",
+      "profile": "https://github.com/bsopecki",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
