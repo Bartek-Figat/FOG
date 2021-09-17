@@ -26,14 +26,14 @@ Node version: v14.17.6
 
 
 
-Install with npm. In the project directory, you can run:
+### Install with npm. In the project directory, you can run:
 
 ```bash
   npm install 
   npm run server
 ```
 
-Install with npm. In the project directory client, you can run:
+### Install with npm. In the project directory client, you can run:
 
 ```bash
   npm install 
@@ -54,13 +54,27 @@ To run this project, you will need to add the following environment variables to
 ## GIT
 
 - Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:
+<br>
+
 `git checkout -b FE#1`
+<br>
+
 - When committing changes to your branch, use the  key at the beginning of your commit message to link those commits to the development panel in your TRELLO. For example:
+<br>
+
 `git commit -m  "feat(FE#1): some message"`
+<br>
+
 - Branching and merging For example:
+<br>
+
 `git checkout master`
 `git merge FE#1`
+<br>
+
 - Commits types For example:
+<br>
+
 `git commit -m  "feat(FE#1): some message"`
 `git commit -m  "fix(FE#1): some message"`
 `git commit -m  "refactor(FE#1): some message"`
