@@ -1,2 +1,3 @@
-@all-contributors add  @<Bartek532> for <code>
+
+ @<Bartek532>  <code>
 
