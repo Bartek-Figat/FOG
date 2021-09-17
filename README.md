@@ -79,7 +79,7 @@ In the project directory client, you can run:
 
 ```
    git checkout master 
-   git merge FE#4
+   git merge FE#1
 ```
 
 ## GIT commits types

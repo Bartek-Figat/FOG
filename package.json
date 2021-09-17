@@ -3,6 +3,12 @@
   "version": "0.0.6",
   "description": "Collaboration",
   "main": "src/server.js",
+  "repository": "https://github.com/Bartek-Figat/FOG.git",
+  "contributors": [
+    "Bartlomiej Figatowski",
+    "Serhii Gr[i]fano Orlenko",
+    "Bartek Sopecki"
+  ],
   "scripts": {
     "server": "nodemon ./src/server.js",
     "client": "npm start --prefix client",
