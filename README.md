@@ -54,19 +54,25 @@
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`dbURI=mongodb://127.0.0.1:27017`
+```bash
+   dbURI=mongodb://127.0.0.1:27017
+```
 <br>
-
-`clientID=`
+```bash
+   clientID=
+```
 <br>
-
-`callbackURL=http://localhost:8080/auth/github/callback`
+```bash
+   callbackURL=http://localhost:8080/auth/github/callback
+```
 <br>
-
-`origin=http://localhost:3000/`
+```bash
+   origin=http://localhost:3000/
+```
 <br>
-
-` secret=`
+```bash
+   secret=secret
+```
 
 
 ## GIT
