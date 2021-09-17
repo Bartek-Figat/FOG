@@ -1,1 +1,0 @@
-all-contributors add Bartek532 bsopecki Grifano code
