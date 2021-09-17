@@ -9,8 +9,8 @@
 ## Table of Contents
 
 - [Download](#Download)
-- [Installation Requirements](#Installation)
-- [Environment Variables](#Environment)
+- [Installation Requirements](#InstallationRequirements)
+- [Environment Variables](#EnvironmentVariables)
 - [GIT](#GIT)
 - [Team](#Team)
 - [Support](#Support)
