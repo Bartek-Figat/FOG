@@ -108,6 +108,7 @@ To run this project, you will need to add the following environment variables to
 
 
 ## Team
+@all-contributors please add @jakebolam for infrastructure, tests and code
 #### Founder -->  Bartlomiej Figatowski
 #### Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
 #### Bartek Sopecki
