@@ -9,8 +9,8 @@
 ## Table of Contents
 
 - [Download](#Download)
-- [Installation/Requirements](#Installation/Requirements)
-- [Environment Variables](#Environment/Variables)
+- [Installation Requirements](#Installation)
+- [Environment Variables](#Environment)
 - [GIT](#GIT)
 - [Team](#Team)
 - [Support](#Support)
@@ -23,7 +23,7 @@
 ```
 
 
-## Installation/Requirements
+## Installation Requirements
 
 ### Tech Stack
 
@@ -50,7 +50,7 @@
   npm start
 ```
 
-## Environment/Variables
+## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
@@ -100,7 +100,7 @@ To run this project, you will need to add the following environment variables to
 
 
 
-### 👥 Team
+## Team
 #### Founder -->  Bartlomiej Figatowski
 #### Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
 #### Bartek Sopecki
