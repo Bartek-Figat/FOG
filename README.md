@@ -1,7 +1,5 @@
 <h1 align="center"> FO</>OG </h1> <br>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 
 ![Screenshot 2021-09-09 at 10 08 54 PM](https://user-images.githubusercontent.com/67811830/132787992-e424dbe2-36da-4945-82fe-976a478a7c67.png)
 
@@ -107,6 +105,8 @@ To run this project, you will need to add the following environment variables to
   git commit -m  "refactor(FE#1): some message"
 ```
 ## 
+
+
 
 ## Contributors ✨
 
