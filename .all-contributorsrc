@@ -27,6 +27,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Grifano",
+      "name": "Serhii",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57153786?v=4",
+      "profile": "https://grifano.webflow.io/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
