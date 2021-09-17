@@ -45,9 +45,17 @@ Node version: v14.17.6
 To run this project, you will need to add the following environment variables to your .env file
 
 `dbURI=mongodb://127.0.0.1:27017`
+<br>
+
 `clientID=`
+<br>
+
 `callbackURL=http://localhost:8080/auth/github/callback`
+<br>
+
 `origin=http://localhost:3000/`
+<br>
+
 ` secret=`
 
 
