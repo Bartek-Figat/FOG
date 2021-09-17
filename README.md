@@ -9,8 +9,8 @@
 ## Table of Contents
 
 - [Download](#Download)
-- [Installation Requirements](#InstallationRequirements)
-- [Environment Variables](#EnvironmentVariables)
+- [Installation Requirements](#Installation)
+- [Environment Variables](#Environment)
 - [GIT](#GIT)
 - [Team](#Team)
 - [Support](#Support)
@@ -23,7 +23,7 @@
 ```
 
 
-## Installation Requirements
+## Installation 
 
 ### Tech Stack
 
@@ -50,7 +50,7 @@
   npm start
 ```
 
-## Environment Variables
+## Environment
 
 To run this project, you will need to add the following environment variables to your .env file
 
