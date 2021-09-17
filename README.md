@@ -1,6 +1,6 @@
 <h1 align="center"> FO</>OG </h1> <br>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Screenshot 2021-09-09 at 10 08 54 PM](https://user-images.githubusercontent.com/67811830/132787992-e424dbe2-36da-4945-82fe-976a478a7c67.png)
@@ -136,6 +136,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/bsopecki"><img src="https://avatars.githubusercontent.com/u/44322413?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartłomiej Sopecki</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=bsopecki" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Bartek532"><img src="https://avatars.githubusercontent.com/u/57185551?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartosz Zagrodzki</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Bartek532" title="Code">💻</a></td>
     <td align="center"><a href="https://grifano.webflow.io/"><img src="https://avatars.githubusercontent.com/u/57153786?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Serhii</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Grifano" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Bartek-Figat"><img src="https://avatars.githubusercontent.com/u/67811830?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartek-Figat</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Bartek-Figat" title="Code">💻</a></td>
   </tr>
 </table>
 
