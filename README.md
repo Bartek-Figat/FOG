@@ -61,6 +61,9 @@ To run this project, you will need to add the following environment variables to
    clientID=
 ```
 ```bash
+   clientSecret=
+```
+```bash
    callbackURL=http://localhost:8080/auth/github/callback
 ```
 ```bash
