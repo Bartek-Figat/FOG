@@ -1,5 +1,6 @@
 <h1 align="center"> FO</>OG </h1> <br>
 
+
 ![Screenshot 2021-09-09 at 10 08 54 PM](https://user-images.githubusercontent.com/67811830/132787992-e424dbe2-36da-4945-82fe-976a478a7c67.png)
 
 ### All rights reserved - a clause indicating that the copyrights belong to the entity informing about it. It is forbidden to change, copy or use the work in any way without the consent of the author.
@@ -12,7 +13,7 @@
 - [Installation Requirements](#Installation)
 - [Environment Variables](#Environment)
 - [GIT](#GIT)
-- [Team](#Team)
+- [Contributors](#Contributors)
 - [Support](#Support)
 
 
@@ -107,12 +108,10 @@ To run this project, you will need to add the following environment variables to
 
 
 
-## Team
-@all-contributors @Grifano @Bartek532 @bsopecki @Bartek-Figat 
-#### Founder -->  Bartlomiej Figatowski
-#### Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
-#### Bartek Sopecki
-#### Bartosz Zagrodzki
+## Contributors
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Support
 
