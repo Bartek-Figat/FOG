@@ -111,6 +111,7 @@ To run this project, you will need to add the following environment variables to
 #### Founder -->  Bartlomiej Figatowski
 #### Junior JavaScript Developer [Serhii "Gr[i]fano" Orlenko"](https://grifano.webflow.io/)`
 #### Bartek Sopecki
+#### Bartosz Zagrodzki
 
 ## Support
 
