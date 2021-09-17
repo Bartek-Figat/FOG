@@ -62,7 +62,6 @@ To run this project, you will need to add the following environment variables to
 ## GIT
 
 - Checkout a new branch in your repo, using the  key at the beginning of the branch name. For example:
-<br>
 
 `git checkout -b FE#1`
 <br>
@@ -77,14 +76,19 @@ To run this project, you will need to add the following environment variables to
 <br>
 
 `git checkout master`
-`git merge FE#1`
 <br>
+
+`git merge FE#1`
+
 
 - Commits types For example:
-<br>
 
 `git commit -m  "feat(FE#1): some message"`
+<br>
+
 `git commit -m  "fix(FE#1): some message"`
+<br>
+
 `git commit -m  "refactor(FE#1): some message"`
 
 ## 
