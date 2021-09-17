@@ -1,4 +1,4 @@
-@all-contributors  @<Bartek532> for <contributions>
-@all-contributors  @<bsopecki> for <contributions>
-@all-contributors  @<Grifano> for <contributions>
-@all-contributors  @<Bartek-Figat> for <contributions>
+@all-contributors add  @<Bartek532> for <code>
+@all-contributors add  @<bsopecki> for <code>
+@all-contributors add  @<Grifano> for <code>
+@all-contributors add @<Bartek-Figat> for <code>
