@@ -9,6 +9,6 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "gitmoji",
-  "contributors": [],
+  "contributors": ["Bartek532", "bsopecki", "Grifano"],
   "contributorsPerLine": 7
 }
