@@ -125,7 +125,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/bsopecki"><img src="https://avatars.githubusercontent.com/u/44322413?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartłomiej Sopecki</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=bsopecki" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Bartek532"><img src="https://avatars.githubusercontent.com/u/57185551?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartosz Zagrodzki</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Bartek532" title="Code">💻</a></td>
     <td align="center"><a href="https://grifano.webflow.io/"><img src="https://avatars.githubusercontent.com/u/57153786?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Serhii</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Grifano" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Bartek-Figat"><img src="https://avatars.githubusercontent.com/u/67811830?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartek-Figat</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Bartek-Figat" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Bartek-Figat"><img src="https://avatars.githubusercontent.com/u/67811830?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bartek-Figat: Founder</b></sub></a><br /><a href="https://github.com/Bartek-Figat/FOG/commits?author=Bartek-Figat" title="Code">💻</a></td>
   </tr>
 </table>
 
