@@ -56,7 +56,11 @@
 To run this project, you will need to add the following environment variables to your .env file
 
 ```bash
-   dbURI=mongodb://127.0.0.1:27017
+   dbURI=mongodb://localhost:27017
+```
+```bash
+   with Docker
+   dbURI=mongodb://mongo:27017
 ```
 ```bash
    clientID=
@@ -73,6 +77,8 @@ To run this project, you will need to add the following environment variables to
 ```bash
    secret=secret
 ```
+
+
 
 
 ## GIT

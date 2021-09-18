@@ -7,11 +7,17 @@ services:
   backend:
     container_name: backend
     restart: unless-stopped
+    depends_on:
+      - mongo
     build:
       context: .
       dockerfile: ./.docker/node/Dockerfile
+    environment:
+            - CHOKIDAR_USEPOLLING=true
     ports:
       - '8080:8080'
+    networks: 
+       - app-network  
 
   client:
     container_name: client
@@ -23,5 +29,29 @@ services:
       dockerfile: ./.docker/client/Dockerfile
     ports:
       - '3000:3000'
-    links:
-      - 'backend:client'
+    networks: 
+       - app-network 
+    environment:
+            - REACT_APP_API_URL=http://localhost:3000
+            - CHOKIDAR_USEPOLLING=true    
+
+  mongo:
+      image: mongo
+      restart: always
+      ports:
+        - "27017:27017"
+      networks: 
+       - app-network
+      volumes: 
+       - mongodbdata:/data/db  
+
+networks:
+    app-network:
+        driver: bridge   
+
+volumes:
+    mongodbdata:
+    node_modules:
+    web-root:
+      driver: local        
+        
