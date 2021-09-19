@@ -1,4 +1,5 @@
 module.exports = {
+  mode: "jit",
   purge: ['public/index.html', 'src/**/*.js', 'src/**/*.jsx'],
   theme: {
     extend: {
