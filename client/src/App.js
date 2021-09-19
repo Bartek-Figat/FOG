@@ -1,22 +1,21 @@
-import React, { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import AOS from 'aos';
-import { focusHandling } from 'cruip-js-toolkit';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect, useLocation } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import { Navigation } from './routers/index';
-import { Github, Login, Callback, Main } from './componets/index';
-import Signin from './componets/Signin';
-import SignUp from './componets/SignUp'
-import { useSelector, useDispatch } from 'react-redux';
 import './index.css';
 
 
-import Home from './pages/Home';
+const Home = lazy(() => import('./pages/Home'));
+const Signin = lazy(() => import('./componets/Signin'));
+const SignUp = lazy(() => import('./componets/SignUp'));
+const { Github, Login, Callback, Main } = lazy(() => import('./componets/index'));
 
-const queryClient = new QueryClient();
+
 function App() {
-
-
   useEffect(() => {
     AOS.init({
       once: true,
@@ -26,17 +25,17 @@ function App() {
     });
   });
 
-
-
   return (
     <Router>
-      <Switch>
-        <Route exact path={Navigation.HOME} component={Home} />
-        <Route exact path={Navigation.REGISTER} component={SignUp} />
-        <Route exact path={Navigation.LOGIN} component={Signin} />
-        <Route exact path={Navigation.AUTHENTICATION} component={Callback} />
-        <Route exact path={Navigation.ADMIN} component={Github} />
-      </Switch>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Switch>
+          <Route path={Navigation.HOME} exact component={Home} />
+          <Route path={Navigation.REGISTER} exact component={SignUp} />
+          <Route path={Navigation.LOGIN} exact component={Signin} />
+          <Route path={Navigation.AUTHENTICATION} exact component={Callback} />
+          <Route path={Navigation.ADMIN} exact component={Github} />
+        </Switch>
+      </Suspense>
     </Router>
   );
 }
