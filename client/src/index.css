@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .btn-base {
+      @apply p-3 rounded px-0 text-white;
+    }
+  }
+
+
+

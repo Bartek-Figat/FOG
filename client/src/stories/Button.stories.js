@@ -6,7 +6,7 @@ export default {
   component: Button,
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <Button {...args} >Continue with GitHub</Button>;
 
 export const Primary = Template.bind({});
 
