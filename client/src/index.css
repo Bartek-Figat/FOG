@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-    .btn-base {
-      @apply p-3 rounded px-0 text-white;
-    }
+  .btn-base {
+    @apply p-3 rounded px-0 text-white w-full relative flex items-center;
   }
-
-
-
+  .btn-primary {
+    @apply p-3 rounded text-white bg-blue-600 hover:bg-blue-700  w-full;
+  }
+  .btn-dark {
+    @apply bg-gray-900 hover:bg-gray-800;
+  }
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700;
+  }
+  .btn-wrapper {
+    @apply flex flex-wrap -mx-3;
+  }
+}

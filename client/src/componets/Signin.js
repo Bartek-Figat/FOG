@@ -66,12 +66,9 @@ function SignIn() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-wrap -mx-3 mt-6">
+                  <div className="btn-wrapper mt-6">
                     <div className="w-full px-3">
-                      <Button className="btn p-3 rounded text-white bg-blue-600 hover:bg-blue-700 w-full">
-                        Sing in
-                      </Button>
-                      
+                      <Button className="btn-primary">Sing in</Button>
                     </div>
                   </div>
                 </form>
@@ -81,9 +78,9 @@ function SignIn() {
                   <div className="border-t border-gray-300 flex-grow ml-3" aria-hidden="true"></div>
                 </div>
                 <form>
-                  <div className="flex flex-wrap -mx-3 mb-3">
+                  <div className="btn-wrapper mb-3">
                     <div className="w-full px-3">
-                      <Button className="btn btn-base bg-gray-900 hover:bg-gray-800 w-full relative flex items-center">
+                      <Button className="btn-base btn-dark">
                         <svg
                           className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4"
                           viewBox="0 0 16 16"
@@ -95,9 +92,9 @@ function SignIn() {
                       </Button>
                     </div>
                   </div>
-                  <div className="flex flex-wrap -mx-3">
+                  <div className="btn-wrapper">
                     <div className="w-full px-3">
-                      <Button className="btn btn-base bg-red-600 hover:bg-red-700 w-full relative flex items-center">
+                      <Button className="btn-base btn-danger">
                         <svg
                           className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4"
                           viewBox="0 0 16 16"

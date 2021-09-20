@@ -6,7 +6,7 @@ export default {
   component: Button,
 };
 
-const Template = (args) => <Button {...args} >Continue with GitHub</Button>;
+const Template = (args) => <Button className="btn-base bg-gray-900 hover:bg-gray-800 " {...args} >Continue with GitHub</Button>;
 
 export const Primary = Template.bind({});
 
