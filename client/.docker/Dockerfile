@@ -1,4 +1,4 @@
-FROM node:14.15.5
+FROM node:lts-alpine AS client
 
 WORKDIR /app
 
@@ -10,6 +10,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
+
 
 CMD ["npm", "start"]
 

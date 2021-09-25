@@ -1,8 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '../atomicDesign/atoms/index';
+import React, { useEffect, useState } from 'react'
+import { useHistory, Link } from 'react-router-dom'
+import { Button } from '../atomicDesign/atoms/index'
 
 function SignIn() {
+  const githubWindow = async () => {
+    window.location.href = 'http://localhost:8080/login/github'
+  }
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       {/*  Page content */}
@@ -77,10 +80,15 @@ function SignIn() {
                   <div className="text-gray-600 italic">Or</div>
                   <div className="border-t border-gray-300 flex-grow ml-3" aria-hidden="true"></div>
                 </div>
-                <form>
+              
                   <div className="btn-wrapper mb-3">
                     <div className="w-full px-3">
-                      <Button className="btn-base btn-dark">
+                      <Button
+                        className="btn-base btn-dark"
+                        onClick={() => {
+                          githubWindow()
+                        }}
+                      >
                         <svg
                           className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4"
                           viewBox="0 0 16 16"
@@ -106,7 +114,7 @@ function SignIn() {
                       </Button>
                     </div>
                   </div>
-                </form>
+               
                 <div className="text-gray-600 text-center mt-6">
                   Don’t you have an account?{' '}
                   <Link
@@ -122,7 +130,7 @@ function SignIn() {
         </section>
       </main>
     </div>
-  );
+  )
 }
 
-export default SignIn;
+export default SignIn

@@ -1,7 +1,8 @@
 version: '3.7'
 
 # docker build --no-cache
-# docker-compose build --no-cache
+# docker-compose up -d
+# docker ps
 
 services:
   backend:
@@ -10,14 +11,18 @@ services:
     depends_on:
       - mongo
     build:
-      context: .
-      dockerfile: ./.docker/node/Dockerfile
-    environment:
-            - CHOKIDAR_USEPOLLING=true
+      dockerfile: ./docker/.docker/node/Dockerfile
+      context: ./backend
     ports:
       - '8080:8080'
-    networks: 
-       - app-network  
+    networks:
+      - app-network
+    environment:
+      - clientID="${clientID}"
+      - clientSecret="${clientSecret}"
+      - secret="${secret}"
+      - origin="${origin}"
+      - dbURI="${dbURI}"
 
   client:
     container_name: client
@@ -25,33 +30,46 @@ services:
     depends_on:
       - backend
     build:
+      dockerfile: ./.docker/.docker/client/Dockerfile
       context: ./client
-      dockerfile: ./.docker/client/Dockerfile
     ports:
       - '3000:3000'
-    networks: 
-       - app-network 
-    environment:
-            - REACT_APP_API_URL=http://localhost:3000
-            - CHOKIDAR_USEPOLLING=true    
+    networks:
+      - app-network
 
   mongo:
-      image: mongo
-      restart: always
-      ports:
-        - "27017:27017"
-      networks: 
-       - app-network
-      volumes: 
-       - mongodbdata:/data/db  
+    image: mongo:5.0
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodbdata:/data/db
 
-networks:
-    app-network:
-        driver: bridge   
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017
 
-volumes:
-    mongodbdata:
-    node_modules:
-    web-root:
-      driver: local        
-        
+  redis:
+    image: redis:alpine
+    command: redis-cli -h redis
+    volumes:
+      - ./data:/data
+  redisinsight:
+    image: redislabs/redisinsight
+    ports:
+      - 8001:8001
+
+ networks:
+  app-network:
+    driver: bridge
+
+ volumes:
+  mongodbdata:
+  node_modules:
+  web-root:
+    driver: local
