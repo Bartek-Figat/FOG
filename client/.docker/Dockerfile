@@ -3,7 +3,7 @@ FROM node:lts-alpine AS client
 WORKDIR /app
 
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY package*.json ./
 
 RUN npm install
 

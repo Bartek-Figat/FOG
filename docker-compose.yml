@@ -3,6 +3,12 @@ version: '3.7'
 # docker build --no-cache
 # docker-compose up -d
 # docker ps
+#docker exec -it some-mongo bash
+#docker logs some-mongo
+#docker-compose logs -f backend
+#printenv | grep clientID
+#docker-compose config
+#docker-compose --version
 
 services:
   backend:
@@ -11,18 +17,18 @@ services:
     depends_on:
       - mongo
     build:
-      dockerfile: ./docker/.docker/node/Dockerfile
+      dockerfile: ../backend/.docker/Dockerfile
       context: ./backend
     ports:
       - '8080:8080'
     networks:
       - app-network
-    environment:
-      - clientID="${clientID}"
-      - clientSecret="${clientSecret}"
-      - secret="${secret}"
-      - origin="${origin}"
-      - dbURI="${dbURI}"
+    env_file:
+      - ./backend/.env.dev
+    # volumes:
+    #   - ./backend/:usr/src/app
+    #   - /usr/src/app/node_modules    
+   
 
   client:
     container_name: client
@@ -30,29 +36,40 @@ services:
     depends_on:
       - backend
     build:
-      dockerfile: ./.docker/.docker/client/Dockerfile
+      dockerfile: ../client/.docker/Dockerfile
       context: ./client
     ports:
       - '3000:3000'
     networks:
       - app-network
+    # volumes:
+    #   - ./client/:usr/src/app
+    #   - /usr/src/app/node_modules
 
   mongo:
-    image: mongo:5.0
+    image: mongo
     restart: always
     ports:
       - 27017:27017
     volumes:
-      - mongodbdata:/data/db
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - app-network      
 
   mongo-express:
     image: mongo-express
+    networks:
+      - app-network
     restart: always
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_SERVER: mongo
-      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
   redis:
     image: redis:alpine
@@ -64,12 +81,12 @@ services:
     ports:
       - 8001:8001
 
- networks:
+networks:
   app-network:
     driver: bridge
 
- volumes:
-  mongodbdata:
+volumes:
+  mongo_data:
   node_modules:
   web-root:
     driver: local
