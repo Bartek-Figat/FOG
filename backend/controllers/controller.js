@@ -11,27 +11,8 @@ const { UserService } = require('../services/userService');
 const { clientID, clientSecret, secret } = process.env;
 
 class Controller {
-  static async tokenIsValidated(req, res) {
-    try {
-      const { token } = req.params;
-
-      const userToken = await UserService.tokenVerification(token);
-
-      if (userToken === undefined) return res.status(401).end();
-      verify(userToken.token, `${secret}`, (err, decoded) => {
-        if (err) {
-          res.status(401).end();
-        } else {
-          req.session.user = decoded.data;
-          req.session.save(() => {
-            return res.json({ success: 200 });
-          });
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500);
-    }
+  static async redirectToGitHubPanelLLogin(req, res, next) {
+    res.redirect(`https://github.com/login/oauth/authorize?scope=user:email&client_id=${clientID}`);
   }
 
   static async githubCallback(req, res, next) {
@@ -43,6 +24,8 @@ class Controller {
 
       const urlSearchParams = new URLSearchParams(response.data);
       const params = Object.fromEntries(urlSearchParams.entries());
+
+      console.log('line --> 47', params);
 
       const user = await axios.get('https://api.github.com/user', {
         headers: {
@@ -68,8 +51,27 @@ class Controller {
     }
   }
 
-  static async redirectToGitHubPanelLLogin(req, res, next) {
-    res.redirect(`https://github.com/login/oauth/authorize?client_id=${clientID}&scope=user:email`);
+  static async tokenIsValidated(req, res) {
+    try {
+      const { token } = req.params;
+
+      const userToken = await UserService.tokenVerification(token);
+
+      if (userToken === undefined) return res.status(401).end();
+      verify(userToken.token, `${secret}`, (err, decoded) => {
+        if (err) {
+          res.status(401).end();
+        } else {
+          req.session.user = decoded.data;
+          req.session.save(() => {
+            return res.json({ success: 200 });
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500);
+    }
   }
 
   static async shwoUserDetails(req, res, next) {

@@ -33,6 +33,7 @@ server.use(
   })
 );
 server.use(cookieParser());
+server.enable('trust proxy');
 server.use(
   session({
     secret,
