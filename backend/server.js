@@ -14,6 +14,7 @@ const compression = require('compression');
 
 // const { client } = require('../config/redis.config');
 // require('../config/redis.config');
+// 
 const { userRouter } = require('./routes/index');
 
 const Port = process.env.Port || 8080;
@@ -32,6 +33,7 @@ server.use(
   })
 );
 server.use(cookieParser());
+server.enable('trust proxy');
 server.use(
   session({
     secret,

@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import {Login, Callback, Github} from './componets/index'
 import { Navigation } from './routers/index';
 import './index.css';
 
@@ -12,7 +13,7 @@ import './index.css';
 const Home = lazy(() => import('./pages/Home'));
 const Signin = lazy(() => import('./componets/Signin'));
 const SignUp = lazy(() => import('./componets/SignUp'));
-const { Github, Login, Callback, Main } = lazy(() => import('./componets/index'));
+
 
 
 function App() {
