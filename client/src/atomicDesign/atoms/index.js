@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Button = ({ children, ...res }) => {
   return (
-    <button {...res}>
+    <button {...res} >
       {children}
     </button>
   );

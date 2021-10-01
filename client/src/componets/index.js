@@ -19,11 +19,11 @@ export const Github = () => {
     async function fetchData() {
       try {
         const { data } = await instance.get(`user/detail`, { withCredentials: true });
-        if (data.statusCode) return history.push('/login');
-
+        console.log(data)
         setUserCredentials(data);
+        history.push('/admin');
       } catch (err) {
-        console.log(err.data);
+        console.log('Error', err);
         if (err) {
           window.location.href = '/login';
         }
@@ -72,10 +72,9 @@ export const Callback = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await instance.get(`api/success/activated/${path[3]}`, {
+        await instance.get(`api/success/activated/${path[3]}`, {
           withCredentials: true,
         });
-        console.log(data);
         redirectAfterConfirmation();
       } catch (err) {
         if (err) {
@@ -94,7 +93,9 @@ export const Callback = () => {
 };
 
 export const Login = () => {
+  
   const githubWindow = async () => {
+   
     window.location.href = 'http://localhost:8080/login/github';
   };
 
