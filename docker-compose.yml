@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 # docker build --no-cache
 # docker-compose up -d
@@ -15,7 +15,7 @@ version: '3.7'
 # RUN if [  "$NODE_ENV" = "development"]; \
 #         then npm install; \
 #         else npm install --only=production \
-          # fi
+# fi
 # printenv
 # docker volume ls
 # docker volume prune
@@ -25,12 +25,17 @@ version: '3.7'
 # docker network inspect container name
 
 services:
-  # nginx:
-  #   image: nginx:stable-alpine
-  #   ports:
-  #     - '8080:80'
-  #    volumes:
-  #     - ./.docker/default.conf:/etc/nginx/conf.d/default.conf:ro
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - 8080:80
+      - 443:443
+    depends_on:
+      - backend  
+    volumes:
+      - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - nginx-network  
 
   backend:
     container_name: backend
@@ -41,16 +46,17 @@ services:
       dockerfile: ../backend/.docker/Dockerfile
       context: ./backend
       # args:
-    ports:
-      - '8080:8080'
+    # ports:
+    #   - "8080:80"
     networks:
       - app-network
+      - public-network
+      - nginx-network
     env_file:
       - ./backend/.env.dev
     volumes:
       - ./backend/:/app
-      - /app/node_modules    
-   
+      - /app/node_modules
 
   client:
     container_name: client
@@ -61,9 +67,9 @@ services:
       dockerfile: ../client/.docker/Dockerfile
       context: ./client
     ports:
-      - '3000:3000'
+      - "3000:3000"
     networks:
-      - app-network
+      - public-network
     volumes:
       - ./client/:/app
       - /app/node_modules
@@ -77,7 +83,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     networks:
-      - app-network      
+      - app-network
 
   mongo-express:
     image: mongo-express
@@ -101,7 +107,6 @@ services:
     volumes:
       - ./data:/data
 
-
   redisinsight:
     image: redislabs/redisinsight
     networks:
@@ -112,6 +117,10 @@ services:
 networks:
   app-network:
     driver: bridge
+  public-network:
+    driver: bridge
+  nginx-network:
+    driver: bridge  
 
 volumes:
   mongo_data:

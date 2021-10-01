@@ -5,7 +5,7 @@ import { useHistory, Link } from 'react-router-dom'
 function SignUp() {
 
   const githubWindow = async () => {
-    window.location.href = 'http://localhost:8080/login/github'
+    window.location.href = 'http://localhost:8080/api/v1/login/github'
   }
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
