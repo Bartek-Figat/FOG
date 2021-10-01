@@ -4,7 +4,7 @@ import { Button } from '../atomicDesign/atoms/index'
 
 function SignIn() {
   const githubWindow = async () => {
-    window.location.href = 'http://localhost:8080/login/github'
+    window.location.href = 'http://localhost:8080/api/v1/login/github'
   }
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">

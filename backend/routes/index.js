@@ -13,10 +13,10 @@ const { protectedRoutes, checkIfSessionUser } = require('../middleware/authentic
 
 const userRouter = Router();
 
-userRouter.get('/login/github', Controller.redirectToGitHubPanelLLogin);
-userRouter.get('/auth/github/callback', Controller.githubCallback);
-userRouter.get('/api/success/activated/:token', Controller.tokenIsValidated);
-userRouter.get('/user/detail', checkIfSessionUser, Controller.shwoUserDetails);
+userRouter.get('/api/v1/login/github', Controller.redirectToGitHubPanelLLogin);
+userRouter.get('/api/v1/auth/github/callback', Controller.githubCallback);
+userRouter.get('/api/v1/success/activated/:token', Controller.tokenIsValidated);
+userRouter.get('/api/v1/user/detail', checkIfSessionUser, Controller.shwoUserDetails);
 
 userRouter.delete('/logout', Controller.logout);
 

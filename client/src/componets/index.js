@@ -72,7 +72,7 @@ export const Callback = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        await instance.get(`api/success/activated/${path[3]}`, {
+        await instance.get(`/success/activated/${path[3]}`, {
           withCredentials: true,
         });
         redirectAfterConfirmation();
@@ -96,7 +96,7 @@ export const Login = () => {
   
   const githubWindow = async () => {
    
-    window.location.href = 'http://localhost:8080/login/github';
+    window.location.href = 'http://localhost:8080/api/v1/login/github';
   };
 
   return (
